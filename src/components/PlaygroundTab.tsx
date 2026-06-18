@@ -272,12 +272,17 @@ export default function PlaygroundTab() {
           </p>
         </div>
 
-        <div className="rounded-2xl border border-deep-border/50 bg-deep-card/25 overflow-hidden flex flex-col h-[520px]">
-          {/* Messages Feed */}
-          <div
-            ref={scrollRef}
-            className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin"
-          >
+        <div className="relative rounded-2xl p-[1px] overflow-hidden group flex flex-col h-[520px] shadow-[0_0_30px_rgba(236,72,153,0.15)]">
+          {/* Animated Gradient Border Layer */}
+          <div className="absolute inset-[-100%] z-0 bg-[conic-gradient(from_90deg_at_50%_50%,#0a1628_0%,#ec4899_50%,#0a1628_100%)] animate-[spin_4s_linear_infinite] opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
+          
+          {/* Inner Content Container */}
+          <div className="relative z-10 flex flex-col h-full w-full rounded-[15px] bg-deep-card/95 backdrop-blur-3xl overflow-hidden border border-deep-border/30">
+            {/* Messages Feed */}
+            <div
+              ref={scrollRef}
+              className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin"
+            >
             {messages.map((msg) => (
               <div
                 key={msg.id}
@@ -354,6 +359,7 @@ export default function PlaygroundTab() {
               </button>
             </div>
           </form>
+        </div>
         </div>
       </div>
     </div>

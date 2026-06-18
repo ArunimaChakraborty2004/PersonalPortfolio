@@ -45,6 +45,24 @@ export default function SkillsContactTab() {
           </p>
         </div>
 
+        {/* Infinite Scrolling Tech Marquee */}
+        <div className="overflow-hidden relative w-full flex items-center py-4 bg-deep-card/20 border border-deep-border/50 rounded-2xl">
+           <motion.div 
+             animate={{ x: [0, -1035] }} 
+             transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+             className="flex items-center gap-3 whitespace-nowrap pl-4 w-max"
+           >
+             {[...SKILL_CATEGORIES.flatMap(c => c.skills), ...SKILL_CATEGORIES.flatMap(c => c.skills)].map((skill, idx) => (
+                <span key={idx} className="rounded-lg border border-pink/30 bg-pink/10 px-3 py-1.5 text-xs font-semibold text-pink-light shadow-[0_0_10px_rgba(236,72,153,0.15)]">
+                  {skill}
+                </span>
+             ))}
+           </motion.div>
+           {/* Fade gradients */}
+           <div className="absolute top-0 left-0 bottom-0 w-12 bg-gradient-to-r from-deep-navy to-transparent pointer-events-none" />
+           <div className="absolute top-0 right-0 bottom-0 w-12 bg-gradient-to-l from-deep-navy to-transparent pointer-events-none" />
+        </div>
+
         <div className="space-y-4">
           {SKILL_CATEGORIES.map((cat) => (
             <div

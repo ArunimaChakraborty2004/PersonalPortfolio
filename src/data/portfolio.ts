@@ -54,10 +54,10 @@ export const CYBERSECURITY = {
     'Enhancing Cybersecurity Risk Assessment through Machine Learning: A Study on Random Forest and XGBoost',
   logo: IMAGES.directorateInfo,
   project: {
-    name: 'PersonaShield',
-    stack: 'Python, Flask, MongoDB, NLP',
+    name: 'PersonaShield– AI-Enhanced Cybersecurity Analysis Platform',
+    stack: 'Python, Flask, MongoDB, Cohere AI',
     description:
-      'Built a human-centric threat detection engine using NLP scoring to identify manipulative communication patterns with real-time explainable risk visualization.',
+      'Designed and deployed a cybersecurity platform for detecting phishing, social engineering attacks, brand impersonation, and malicious URLs.',
   },
 }
 
@@ -70,7 +70,7 @@ export const EMBEDDED_SYSTEMS = {
     name: 'VGRS: Voice-Guided Room Scout',
     year: '2026',
     description:
-      'An assistive voice-driven navigation framework for elderly and visually impaired users.',
+      'Designed an assistive voice-guided navigation framework for elderly and visually impaired users, enabling natural human-robot interaction.',
   },
 }
 
@@ -139,6 +139,6 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 
 export const CONTACT = {
   email: 'chakrabortyarunima217@gmail.com',
-  linkedin: 'https://linkedin.com/in/arunima-chakraborty',
-  github: 'https://github.com/arunima-chakraborty',
+  linkedin: 'https://www.linkedin.com/in/arunima-chakraborty17',
+  github: 'https://github.com/ArunimaChakraborty2004',
 }

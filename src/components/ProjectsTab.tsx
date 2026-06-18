@@ -36,29 +36,29 @@ export default function ProjectsTab() {
       ]
     },
     {
-      name: 'PersonaShield',
-      description: 'Human-centric threat detection engine using NLP scoring to identify manipulative and malicious communication patterns.',
-      tags: ['Python', 'Flask', 'MongoDB', 'NLP', 'Security Scoring'],
+      name: 'PersonaShield– AI-Enhanced Cybersecurity Analysis Platform',
+      description: 'Designed and deployed a cybersecurity platform for detecting phishing, social engineering attacks, brand impersonation, and malicious URLs.',
+      tags: ['Python', 'Flask', 'MongoDB', 'Cohere AI'],
       highlight: 'Vulnerability Framework',
       image: IMAGES.directorateInfo,
       category: ['cybersecurity', 'ai-nlp'],
       extendedDetails: [
-        'Calculates real-time risk severity indices for email/chat text lines.',
-        'Hosts a MongoDB dashboard visualizing text semantic traits and manipulative intent cues.',
-        'Utilizes Explainable AI models to trace why specific sentences are tagged as suspicious.'
+        'Implemented AI-powered threat classification, explainable risk scoring, OpenPhish threat intelligence integration, and WHOIS-based domain reputation analysis.',
+        'Built a Security Assistant capable of explaining threat indicators, attack techniques, and mitigation strategies using contextual AI responses.',
+        'Created analytics dashboards, PDF threat reports, confidence scoring mechanisms, and MongoDB-backed threat intelligence storage for real-time security monitoring.'
       ]
     },
     {
       name: 'VGRS: Voice-Guided Room Scout',
-      description: 'An assistive voice-driven navigation framework for elderly and visually impaired users navigating complex indoors.',
-      tags: ['Arduino IDE', 'Speech Recognition', 'Conversational AI', 'Robotics'],
+      description: 'Designed an assistive voice-guided navigation framework for elderly and visually impaired users, enabling natural human-robot interaction.',
+      tags: ['Python', 'Arduino', 'Speech Recognition', 'Conversational AI'],
       highlight: 'AI & Robotics Research',
       image: IMAGES.nitAgartala,
       category: ['fullstack-hardware', 'ai-nlp'],
       extendedDetails: [
-        'Designed serial Arduino trigger controls powered by voice commands.',
-        'Integrated intent recognition structures to suppress environmental false starts by 40%.',
-        'Built at NIT Agartala Research Internship Lab.'
+        'Integrated Speech-to-Text (STT), Text-to-Speech (TTS), conversational AI, and embedded hardware communication for real-time assistance.',
+        'Implemented intent classification techniques to differentiate conversational dialogue from actionable robotic commands.',
+        'Proposed a scalable architecture supporting future integration with object detection, object tracking, obstacle awareness, and autonomous indoor navigation.'
       ]
     },
     {
@@ -161,9 +161,11 @@ export default function ProjectsTab() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
+                whileHover={{ rotateX: 1.5, rotateY: -1.5, z: 20 }}
+                style={{ transformStyle: "preserve-3d" }}
                 className={[
-                  'rounded-2xl border transition-all duration-300 bg-deep-card/30 overflow-hidden flex flex-col justify-between',
-                  isExpanded ? 'border-pink/60 ring-1 ring-pink/25 col-span-1 md:col-span-2' : 'border-deep-border/60 hover:border-pink/30 hover:bg-deep-card/45'
+                  'relative rounded-2xl border transition-all duration-500 overflow-hidden flex flex-col justify-between group',
+                  isExpanded ? 'border-pink/60 ring-2 ring-pink/30 bg-gradient-to-br from-deep-card/90 to-deep-card/50 col-span-1 md:col-span-2 shadow-[0_0_40px_-10px_rgba(236,72,153,0.25)]' : 'border-deep-border/60 hover:border-pink/50 bg-deep-card/30 hover:bg-gradient-to-br hover:from-deep-card/60 hover:to-deep-card/30 hover:shadow-[0_0_30px_-10px_rgba(236,72,153,0.15)] hover:-translate-y-1'
                 ].join(' ')}
               >
                 <div className="p-5 md:p-6 space-y-4">
