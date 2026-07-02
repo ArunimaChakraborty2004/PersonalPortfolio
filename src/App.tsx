@@ -11,6 +11,7 @@ import ExperienceTab from './components/ExperienceTab'
 import ProjectsTab from './components/ProjectsTab'
 import PlaygroundTab from './components/PlaygroundTab'
 import SkillsContactTab from './components/SkillsContactTab'
+import CustomCursor from './components/CustomCursor'
 
 type TabType = 'overview' | 'experience' | 'projects' | 'playground' | 'contact'
 
@@ -61,7 +62,8 @@ export default function App() {
 
   return (
     <ChatProvider>
-      <div className="relative min-h-screen overflow-x-hidden bg-deep-navy pb-16">
+      <div className="relative min-h-screen overflow-x-hidden bg-deep-navy pb-16 md:cursor-none">
+        <CustomCursor />
         
         {/* Scroll Progress Bar */}
         <motion.div
@@ -77,35 +79,49 @@ export default function App() {
           }}
         />
 
-        {/* Floating Animated Background Orbs */}
+        {/* Floating Animated Background Orbs & Particles */}
         <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
+          {/* Main Orbs */}
           <motion.div
-            animate={{
-              x: [0, 200, -100, 0],
-              y: [0, -150, 50, 0],
-              scale: [1, 1.3, 0.9, 1],
-            }}
+            animate={{ x: [0, 200, -100, 0], y: [0, -150, 50, 0], scale: [1, 1.3, 0.9, 1] }}
             transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-pink/20 blur-[90px]"
+            className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-pink/30 blur-[80px]"
           />
           <motion.div
-            animate={{
-              x: [0, -150, 100, 0],
-              y: [0, 200, -100, 0],
-              scale: [1, 1.4, 1.1, 1],
-            }}
+            animate={{ x: [0, -150, 100, 0], y: [0, 200, -100, 0], scale: [1, 1.4, 1.1, 1] }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute top-[30%] -right-[10%] w-[35%] h-[50%] rounded-full bg-indigo-500/20 blur-[90px]"
+            className="absolute top-[30%] -right-[10%] w-[35%] h-[50%] rounded-full bg-indigo-500/30 blur-[90px]"
           />
           <motion.div
-            animate={{
-              x: [0, 100, -50, 0],
-              y: [0, -50, 150, 0],
-              scale: [1, 1.2, 0.8, 1],
-            }}
+            animate={{ x: [0, 100, -50, 0], y: [0, -50, 150, 0], scale: [1, 1.2, 0.8, 1] }}
             transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-            className="absolute -bottom-[10%] left-[20%] w-[30%] h-[30%] rounded-full bg-emerald-500/15 blur-[90px]"
+            className="absolute -bottom-[10%] left-[20%] w-[30%] h-[30%] rounded-full bg-emerald-500/20 blur-[90px]"
           />
+          
+          {/* Floating Cyber Bubbles / Particles */}
+          <div className="absolute inset-0">
+            {[...Array(45)].map((_, i) => (
+              <motion.div
+                key={`particle-${i}`}
+                className="absolute w-2 h-2 bg-pink-light/50 rounded-full shadow-[0_0_12px_rgba(236,72,153,0.8)]"
+                initial={{
+                  x: `${Math.random() * 100}vw`,
+                  y: `${Math.random() * 100}vh`,
+                  opacity: Math.random() * 0.4 + 0.2,
+                  scale: Math.random() * 2.5 + 0.5
+                }}
+                animate={{
+                  y: [null, `${-20 - Math.random() * 30}vh`],
+                  opacity: [null, 0]
+                }}
+                transition={{
+                  duration: Math.random() * 12 + 10,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Floating Glass Navbar */}

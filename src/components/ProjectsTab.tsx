@@ -3,10 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FolderGit2, ArrowUpRight, Sparkles } from 'lucide-react'
 import { IMAGES } from '../data/portfolio'
 import OrgLogo from './OrgLogo'
+import ProjectModal from './ProjectModal'
 
 type ProjectCategory = 'all' | 'ai-nlp' | 'cybersecurity' | 'fullstack-hardware'
 
-interface ProjectItem {
+export interface ProjectItem {
   name: string
   description: string
   tags: string[]
@@ -14,14 +15,77 @@ interface ProjectItem {
   image?: string
   category: ProjectCategory[]
   extendedDetails?: string[]
+  githubUrl?: string
+  liveDemoUrl?: string
+  details?: {
+    overview?: string
+    problemStatement?: string
+    architecture?: string
+    workflow?: string
+    features?: string[]
+    screenshots?: string[]
+    contributions?: string
+    challenges?: string
+    futureEnhancements?: string
+  }
 }
 
 export default function ProjectsTab() {
   const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>('all')
   const [expandedProject, setExpandedProject] = useState<string | null>(null)
+  const [selectedModalProject, setSelectedModalProject] = useState<ProjectItem | null>(null)
 
   // Consolidate all projects from portfolio.ts and make details richer
   const allProjects: ProjectItem[] = [
+    {
+      name: 'ThreatWeave – AI-Powered Cyber Threat Intelligence Correlation Engine',
+      description: 'An AI-powered cybersecurity platform that ingests security logs from multiple sources, extracts Indicators of Compromise (IOCs), and provides explainable AI-powered security insights through an interactive dashboard.',
+      tags: ['React.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express.js', 'SQLite', 'Neo4j', 'Groq API (Llama 3)', 'Gemini API', 'AlienVault OTX', 'AbuseIPDB', 'REST APIs'],
+      highlight: 'Full Stack • AI • Cybersecurity',
+      category: ['fullstack-hardware', 'ai-nlp', 'cybersecurity'],
+      githubUrl: 'https://github.com/ArunimaChakraborty2004/ThreatWeave',
+      liveDemoUrl: 'https://threatweave.onrender.com/',
+      details: {
+        overview: 'ThreatWeave is an AI-powered cybersecurity platform that ingests security logs from multiple sources, extracts Indicators of Compromise (IOCs), correlates related security alerts into attack campaigns, calculates dynamic risk scores, maps attacker behavior to the MITRE ATT&CK framework, visualizes relationships using Neo4j Knowledge Graphs, and provides explainable AI-powered security insights through an interactive dashboard.',
+        features: [
+          'AI-powered threat correlation',
+          'IOC extraction from raw security logs',
+          'Dynamic risk scoring',
+          'Attack campaign detection',
+          'MITRE ATT&CK mapping',
+          'Neo4j graph visualization',
+          'Threat Intelligence integration',
+          'Universal Threat Lookup',
+          'AI Security Assistant',
+          'Real-time ingestion pipeline',
+          'Interactive cybersecurity dashboard'
+        ]
+      }
+    },
+    {
+      name: 'Connectra (SkillSphere)',
+      description: 'A full-stack real-time developer networking platform inspired by LinkedIn and Instagram, built with React, Tailwind CSS, Supabase, and PostgreSQL.',
+      tags: ['React', 'Vite', 'Tailwind CSS', 'Supabase', 'PostgreSQL', 'Zustand', 'Framer Motion', 'JavaScript'],
+      highlight: 'Social Networking',
+      category: ['fullstack-hardware'],
+      githubUrl: 'https://github.com/ArunimaChakraborty2004/Connectra',
+      details: {
+        overview: 'Connectra is a modern social networking platform designed for developers to connect, collaborate, and showcase their work. The application features secure authentication, real-time posts, likes, comments, connection requests, profile management, and responsive UI components. Built using React, Tailwind CSS, Supabase, and PostgreSQL, the project demonstrates full-stack development, database design, real-time systems, and secure authentication workflows.',
+        features: [
+          'Secure Authentication using Supabase Auth',
+          'User Profiles with customizable information',
+          'Create, Edit & Delete Posts',
+          'Like & Comment System',
+          'Real-time Feed Updates',
+          'Connection Request System (Connect / Accept / Reject)',
+          'Responsive LinkedIn/Instagram-inspired UI',
+          'Supabase Realtime Integration',
+          'PostgreSQL Database with Row Level Security (RLS)',
+          'Modern React Component Architecture'
+        ],
+        contributions: 'Built a full-stack real-time social networking platform using React, Supabase, and PostgreSQL. Implemented authentication, user profiles, posts, likes, comments, and connection requests with secure Row Level Security policies. Integrated Supabase Realtime to provide live updates for posts, comments, likes, and connection activities without page refreshes. Designed a responsive LinkedIn/Instagram-inspired UI using Tailwind CSS and reusable React components.'
+      }
+    },
     {
       name: 'FinSakhi',
       description: 'Voice-first multilingual financial assistant chatbot enhancing digital banking accessibility for elderly and rural populations.',
@@ -29,6 +93,7 @@ export default function ProjectsTab() {
       highlight: 'Finalist — IEEE CS Geekathon 2025',
       image: IMAGES.ieee,
       category: ['ai-nlp'],
+      githubUrl: 'https://github.com/ArunimaChakraborty2004/Finsakhi-A-financial-chatbot',
       extendedDetails: [
         'Designed multi-lingual translation pipeline supporting voice-input prompts.',
         'Finalist among 100+ competing entries at IEEE CS Geekathon 2025.',
@@ -42,6 +107,8 @@ export default function ProjectsTab() {
       highlight: 'Vulnerability Framework',
       image: IMAGES.directorateInfo,
       category: ['cybersecurity', 'ai-nlp'],
+      githubUrl: 'https://github.com/ArunimaChakraborty2004/PersonaShield',
+      liveDemoUrl: 'https://personashield-st3o.onrender.com/',
       extendedDetails: [
         'Implemented AI-powered threat classification, explainable risk scoring, OpenPhish threat intelligence integration, and WHOIS-based domain reputation analysis.',
         'Built a Security Assistant capable of explaining threat indicators, attack techniques, and mitigation strategies using contextual AI responses.',
@@ -55,6 +122,8 @@ export default function ProjectsTab() {
       highlight: 'AI & Robotics Research',
       image: IMAGES.nitAgartala,
       category: ['fullstack-hardware', 'ai-nlp'],
+
+
       extendedDetails: [
         'Integrated Speech-to-Text (STT), Text-to-Speech (TTS), conversational AI, and embedded hardware communication for real-time assistance.',
         'Implemented intent classification techniques to differentiate conversational dialogue from actionable robotic commands.',
@@ -67,6 +136,8 @@ export default function ProjectsTab() {
       tags: ['NLP', 'Python', 'Streamlit', 'Cohere API'],
       highlight: 'AI Resume Optimizer',
       category: ['ai-nlp'],
+      githubUrl: 'https://github.com/ArunimaChakraborty2004/Resume-Sudharak',
+      liveDemoUrl: 'https://resume-sudharak-nfcgubqhyidicxozxlynrb.streamlit.app/',
       extendedDetails: [
         'Extracts keywords and calculates cosine similarity matching indices.',
         'Automatically outlines missing critical tools, frameworks, or technical terms.',
@@ -79,6 +150,8 @@ export default function ProjectsTab() {
       tags: ['Full-Stack', 'RBAC', 'Supabase', 'PostgreSQL', 'React'],
       highlight: 'Secure Portal',
       category: ['fullstack-hardware'],
+      githubUrl: 'https://github.com/ArunimaChakraborty2004/Mentor-Mentee-connect',
+      liveDemoUrl: 'https://mentormenteeconnect.vercel.app/',
       extendedDetails: [
         'Implements strict JWT token sessions and Row-Level Security (RLS) tables.',
         'Supports instant booking schedulers and mentor slot allocations.',
@@ -91,6 +164,8 @@ export default function ProjectsTab() {
       tags: ['Data Viz', 'Satellite Data', 'Climate Science', 'GIS'],
       highlight: 'Satellite Analysis',
       category: ['fullstack-hardware'],
+      githubUrl: 'https://github.com/ArunimaChakraborty2004/Lavasa-A-Climate-Blind-Spot',
+      liveDemoUrl: 'https://arunimachakraborty2004.github.io/Lavasa-A-Climate-Blind-Spot/',
       extendedDetails: [
         'Maps local vegetation indices (NDVI) alongside urban heat density maps.',
         'Exposes runoff flood zones triggered by commercial construction trends.',
@@ -163,12 +238,27 @@ export default function ProjectsTab() {
                 transition={{ duration: 0.3 }}
                 whileHover={{ rotateX: 1.5, rotateY: -1.5, z: 20 }}
                 style={{ transformStyle: "preserve-3d" }}
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect()
+                  const x = e.clientX - rect.left
+                  const y = e.clientY - rect.top
+                  e.currentTarget.style.setProperty('--mouse-x', `${x}px`)
+                  e.currentTarget.style.setProperty('--mouse-y', `${y}px`)
+                }}
                 className={[
                   'relative rounded-2xl border transition-all duration-500 overflow-hidden flex flex-col justify-between group',
                   isExpanded ? 'border-pink/60 ring-2 ring-pink/30 bg-gradient-to-br from-deep-card/90 to-deep-card/50 col-span-1 md:col-span-2 shadow-[0_0_40px_-10px_rgba(236,72,153,0.25)]' : 'border-deep-border/60 hover:border-pink/50 bg-deep-card/30 hover:bg-gradient-to-br hover:from-deep-card/60 hover:to-deep-card/30 hover:shadow-[0_0_30px_-10px_rgba(236,72,153,0.15)] hover:-translate-y-1'
                 ].join(' ')}
               >
-                <div className="p-5 md:p-6 space-y-4">
+                {/* Spotlight Overlay */}
+                <div 
+                  className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100 z-0"
+                  style={{
+                    background: `radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(236,72,153,0.15), transparent 40%)`
+                  }}
+                />
+                
+                <div className="p-5 md:p-6 space-y-4 relative z-10">
                   {/* Title & Badge */}
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-3">
@@ -193,14 +283,25 @@ export default function ProjectsTab() {
                         )}
                       </div>
                     </div>
-                    
-                    <button
-                      onClick={() => setExpandedProject(isExpanded ? null : project.name)}
-                      className="text-xs font-semibold text-pink-light hover:text-pink flex items-center gap-1 transition-colors cursor-pointer"
-                    >
-                      {isExpanded ? 'Collapse' : 'Details'}
-                      <ArrowUpRight className={`h-3.5 w-3.5 transform transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
-                    </button>
+
+                    <div className="flex flex-col gap-2 items-end shrink-0">
+                      <button
+                        onClick={() => setSelectedModalProject(project)}
+                        className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-pink/10 text-pink-light hover:bg-pink hover:text-white transition-colors flex items-center gap-1 cursor-pointer"
+                      >
+                        View Details
+                      </button>
+
+                      {project.extendedDetails && (
+                        <button
+                          onClick={() => setExpandedProject(isExpanded ? null : project.name)}
+                          className="text-xs font-semibold text-text-secondary hover:text-pink flex items-center gap-1 transition-colors cursor-pointer"
+                        >
+                          {isExpanded ? 'Collapse' : 'Quick View'}
+                          <ArrowUpRight className={`h-3.5 w-3.5 transform transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
+                        </button>
+                      )}
+                    </div>
                   </div>
 
                   {/* Description */}
@@ -247,6 +348,12 @@ export default function ProjectsTab() {
           })}
         </AnimatePresence>
       </motion.div>
+
+      {/* Project Detail Modal */}
+      <ProjectModal
+        project={selectedModalProject}
+        onClose={() => setSelectedModalProject(null)}
+      />
     </div>
   )
 }

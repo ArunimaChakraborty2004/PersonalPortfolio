@@ -136,12 +136,15 @@ export default function OverviewTab({ onNavigate }: OverviewTabProps) {
                 <Sparkles className="h-3.5 w-3.5 animate-pulse" />
                 <span>Available for Internships & Full-Time Roles</span>
               </motion.div>
-              <h1 className="bg-gradient-to-r from-text-light via-pink-light to-pink bg-clip-text text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl md:text-6xl pb-1">
+              <h1 
+                className="hover-glitch bg-gradient-to-r from-text-light via-pink-light to-pink bg-clip-text text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl md:text-6xl pb-1 cursor-default transition-transform hover:scale-[1.02]"
+                data-text={PROFILE.name}
+              >
                 {PROFILE.name}
               </h1>
               <p className="text-xl font-medium text-pink-light/90 md:text-2xl min-h-[2rem]">
                 {currentRole}
-                <span className="animate-pulse text-pink">|</span>
+                <span className="animate-pulse text-pink ml-1">_</span>
               </p>
             </div>
 
