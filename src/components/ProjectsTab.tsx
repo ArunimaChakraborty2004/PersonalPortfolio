@@ -69,6 +69,7 @@ export default function ProjectsTab() {
       highlight: 'Social Networking',
       category: ['fullstack-hardware'],
       githubUrl: 'https://github.com/ArunimaChakraborty2004/Connectra',
+      liveDemoUrl: 'https://connectra-vby9.onrender.com/',
       details: {
         overview: 'Connectra is a modern social networking platform designed for developers to connect, collaborate, and showcase their work. The application features secure authentication, real-time posts, likes, comments, connection requests, profile management, and responsive UI components. Built using React, Tailwind CSS, Supabase, and PostgreSQL, the project demonstrates full-stack development, database design, real-time systems, and secure authentication workflows.',
         features: [
@@ -251,13 +252,13 @@ export default function ProjectsTab() {
                 ].join(' ')}
               >
                 {/* Spotlight Overlay */}
-                <div 
+                <div
                   className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100 z-0"
                   style={{
                     background: `radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(236,72,153,0.15), transparent 40%)`
                   }}
                 />
-                
+
                 <div className="p-5 md:p-6 space-y-4 relative z-10">
                   {/* Title & Badge */}
                   <div className="flex items-start justify-between gap-4">
