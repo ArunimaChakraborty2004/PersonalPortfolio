@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, ExternalLink, Code2, Monitor, Database, Layout, Search, Network, ShieldAlert, Cpu, Sparkles } from 'lucide-react'
+import { X, ExternalLink, Code2, Database, Layout, Network, ShieldAlert, Cpu, Sparkles } from 'lucide-react'
 import { createPortal } from 'react-dom'
 import type { ProjectItem } from './ProjectsTab'
 
