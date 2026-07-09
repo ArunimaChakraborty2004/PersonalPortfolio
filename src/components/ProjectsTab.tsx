@@ -88,17 +88,29 @@ export default function ProjectsTab() {
       }
     },
     {
-      name: 'FinSakhi',
-      description: 'Voice-first multilingual financial assistant chatbot enhancing digital banking accessibility for elderly and rural populations.',
-      tags: ['Conversational AI', 'Voice Engine', 'FinTech', 'NLP', 'Python'],
-      highlight: 'Finalist — IEEE CS Geekathon 2025',
-      image: IMAGES.ieee,
-      category: ['ai-nlp'],
-      githubUrl: 'https://github.com/ArunimaChakraborty2004/Finsakhi-A-financial-chatbot',
+      name: 'Hisab-Kitab – Personal Finance & Expense Tracker',
+      description: 'A full-stack MERN application providing accessible personal finance management for low-literacy users. Features an icon-centric UI, multi-language support, and comprehensive financial tools.',
+      tags: ['React 18', 'Vite', 'Node.js', 'Express.js', 'MongoDB', 'Chart.js', 'SCSS'],
+      highlight: 'Accessibility-First · MERN Stack',
+      category: ['fullstack-hardware'],
+      githubUrl: 'https://github.com/ArunimaChakraborty2004/Hisab-Kitab',
+      liveDemoUrl: 'https://hisab-kitab-bfak.onrender.com/',
+      details: {
+        overview: 'Hisab-Kitab is a full-stack MERN application designed to make personal finance management accessible to low-literacy users through an intuitive, icon-based interface with multi-language support (Kannada, Hindi, Tamil, Marathi, Bengali). It covers transaction tracking, balance inquiries, savings schemes, and KYC verification, deployed on Render with automated CI/CD.',
+        features: [
+          'Accessibility-first design with large icon buttons and minimal text',
+          'Multi-language support: Kannada, Hindi, Tamil, Marathi, Bengali',
+          'Transaction tracking and balance inquiries',
+          'Savings schemes management',
+          'KYC verification workflow',
+          'Chart.js powered financial visualizations',
+          'Production deployment on Render with CI/CD pipeline'
+        ]
+      },
       extendedDetails: [
-        'Designed multi-lingual translation pipeline supporting voice-input prompts.',
-        'Finalist among 100+ competing entries at IEEE CS Geekathon 2025.',
-        'Synthesized customized TTS/STT layers to capture regional accents and dialects.'
+        'Designed icon-centric UI with minimal text for an inclusive experience across literacy levels.',
+        'Implemented multi-language support for 5 regional Indian languages: Kannada, Hindi, Tamil, Marathi, and Bengali.',
+        'Built full-stack MERN architecture (React 18/Vite + Node.js/Express + MongoDB) deployed on Render with automated CI/CD.'
       ]
     },
     {
@@ -129,6 +141,31 @@ export default function ProjectsTab() {
         'Integrated Speech-to-Text (STT), Text-to-Speech (TTS), conversational AI, and embedded hardware communication for real-time assistance.',
         'Implemented intent classification techniques to differentiate conversational dialogue from actionable robotic commands.',
         'Proposed a scalable architecture supporting future integration with object detection, object tracking, obstacle awareness, and autonomous indoor navigation.'
+      ]
+    },
+    {
+      name: 'RaastaAI – Edge AI-Based Advanced Driver Assistance System',
+      description: 'An intelligent, offline-capable edge AI solution designed to detect road hazards in real-time and warn drivers before accidents occur.',
+      tags: ['Python', 'OpenCV', 'YOLOv8', 'PyTorch', 'Streamlit', 'NumPy', 'Pandas'],
+      highlight: 'Edge AI • ADAS',
+      category: ['ai-nlp', 'fullstack-hardware'],
+      githubUrl: 'https://github.com/ArunimaChakraborty2004/RaastaAI',
+      liveDemoUrl: 'https://raastaai.onrender.com/',
+      details: {
+        overview: 'RaastaAI is a proof-of-concept Advanced Driver Assistance System (ADAS) that leverages edge AI and computer vision to detect road hazards in real-time and warn drivers before accidents occur. The system operates entirely offline with local inference, making it suitable for automotive environments where latency and connectivity are critical concerns. It analyzes road video, identifies potential threats (vehicles, pedestrians, cyclists), estimates collision risk with a dynamic driving corridor, and provides context-aware warnings with intelligent debouncing.',
+        features: [
+          'Real-time object detection using YOLOv8 Nano',
+          'Collision risk estimation with visual-spatial scoring',
+          'Lane detection and corridor analysis',
+          '100% offline edge inference (no cloud dependency)',
+          'Session analytics and safety summaries',
+          'Context-aware warning system'
+        ]
+      },
+      extendedDetails: [
+        'Real-time object detection using YOLOv8 Nano for vehicles, pedestrians, cyclists, and traffic elements.',
+        'Collision risk estimation using visual-spatial risk scoring (Safe → Caution → Warning → Critical).',
+        '100% offline edge inference with no cloud dependency for low latency.'
       ]
     },
     {

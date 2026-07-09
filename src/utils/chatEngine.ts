@@ -113,7 +113,13 @@ ${PROFILE.summary}
 
   if (
     q.includes('project') ||
-    q.includes('finsakhi') ||
+    q.includes('hisab') ||
+    q.includes('hisab-kitab') ||
+    q.includes('finance') ||
+    q.includes('expense tracker') ||
+    q.includes('raastaai') ||
+    q.includes('adas') ||
+    q.includes('edge ai') ||
     q.includes('resume sudharak') ||
     q.includes('mentor') ||
     q.includes('lavasa') ||
@@ -169,7 +175,7 @@ Feel free to ask about her cybersecurity work, AI projects, skills, or education
     }
   }
 
-  if (q.includes('finsakhi')) {
+  if (q.includes('hisab') || q.includes('hisab-kitab')) {
     const p = AI_PROJECTS[0]
     return {
       message: `**${p.name}** — ${p.description}\n\n_${p.highlight}_`,
@@ -183,7 +189,7 @@ Feel free to ask about her cybersecurity work, AI projects, skills, or education
 
 1. **Cybersecurity** — Vulnerability assessments at Directorate of Information
 2. **AI & Robotics** — Voice-controlled assistive robotics at NIT Agartala
-3. **Projects** — Full-stack and AI applications (FinSakhi, Resume Sudharak, and more)
+3. **Projects** — Full-stack and AI applications (Hisab-Kitab, RaastaAI, Resume Sudharak, and more)
 
 Which area would you like to explore?`,
       filter: null,

@@ -76,12 +76,18 @@ export const EMBEDDED_SYSTEMS = {
 
 export const AI_PROJECTS: Project[] = [
   {
-    name: 'FinSakhi',
+    name: 'Hisab-Kitab',
     description:
-      'Voice-first multilingual financial assistant chatbot enhancing digital banking accessibility.',
-    tags: ['Conversational AI', 'Voice', 'FinTech'],
-    highlight: 'Finalist — IEEE CS Geekathon 2025',
-    image: IMAGES.ieee,
+      'Full-stack MERN personal finance tracker with accessibility-first design and multi-language support (Kannada, Hindi, Tamil, Marathi, Bengali) for low-literacy users.',
+    tags: ['React 18', 'Node.js', 'MongoDB', 'Chart.js'],
+    highlight: 'Accessibility-First · MERN Stack',
+  },
+  {
+    name: 'RaastaAI',
+    description:
+      'Edge AI-based Advanced Driver Assistance System using YOLOv8 for real-time hazard detection with 100% offline inference.',
+    tags: ['Edge AI', 'Computer Vision', 'YOLOv8', 'ADAS'],
+    highlight: 'Edge AI • ADAS',
   },
   {
     name: 'Resume Sudharak',

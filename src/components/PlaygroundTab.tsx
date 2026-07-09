@@ -117,7 +117,7 @@ export default function PlaygroundTab() {
       if (jdLower.includes('security') || jdLower.includes('vulnerability') || jdLower.includes('wireshark')) {
         rationale = `Arunima is a strong fit for this security role. Her internship at the Directorate of Information Technology (Govt. of Tripura) directly involved vulnerability assessments, raw traffic analysis with Burp Suite and Wireshark, and she published research specifically on ML risk assessment.`
       } else if (jdLower.includes('ai') || jdLower.includes('nlp') || jdLower.includes('speech') || jdLower.includes('robot')) {
-        rationale = `Excellent alignment! Arunima has practical research experience at NIT Agartala creating voice-controlled assistive robots with Speech-to-Text and NLP intent filters, alongside building AI applications like FinSakhi (IEEE CS Geekathon finalist) and Resume Sudharak.`
+        rationale = `Excellent alignment! Arunima has practical research experience at NIT Agartala creating voice-controlled assistive robots with Speech-to-Text and NLP intent filters, alongside building AI applications like Hisab-Kitab, RaastaAI, and Resume Sudharak.`
       } else {
         rationale = `Arunima represents a highly adaptive fit. Her B.Tech background at Christ University (CGPA 3.8/4) combines deep database modeling (MongoDB, PostgreSQL) with robust full-stack workflows using Supabase, React, and Python Flask APIs.`
       }
